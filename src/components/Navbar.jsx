@@ -19,7 +19,7 @@ export default function Navbar(props) {
                                 <a className="nav-link" href="/">About Us</a>
                             </li>
                         </ul>
-                        <div className="form-check form-switch">
+                        <div className="form-check form-switch mx-2">
                             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={props.toggleMode}/>
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault" >{props.modeBtnText}</label>
                         </div>
