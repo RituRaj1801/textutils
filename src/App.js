@@ -1,17 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
+import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import Textfrom from './components/Textfrom';
 import { useState } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const [alert, setAlert]=useState(null)
-  const showAlert=(message,type)=>{
+  const [alert, setAlert] = useState(null)
+  const showAlert = (message, type) => {
     setAlert({
-      msg:message,
-      type:type
+      msg: message,
+      type: type
     })
     setTimeout(() => {
       setAlert(null)
@@ -28,21 +30,21 @@ function App() {
     if (modeDark) {
       setAlert({
         msg: "dark mode enable",
-        type:"dark"
+        type: "dark"
       })
-      document.body.style.backgroundColor='black'
+      document.body.style.backgroundColor = 'black'
       setMyStyle({
         color: 'white',
         backgroundColor: 'black'
       })
       setModeDark(false)
       setModeBtnText('light mode')
-    }else{
+    } else {
       setAlert({
         msg: "light mode enable",
-        type:"light"
+        type: "light"
       })
-      document.body.style.backgroundColor='white'
+      document.body.style.backgroundColor = 'white'
 
       setMyStyle({
         color: 'black',
@@ -57,11 +59,17 @@ function App() {
   }
   return (
     <>
-      <Navbar title="TextUtils" modeBtnText={modeBtnText} modeDark={modeDark}  toggleMode={toggleMode}/>
-      <Alert alert={alert}/>
-      <div className="container" style={myStyle}   >
-        <Textfrom heading="Analyze your text"  modeDark={modeDark} showAlert={showAlert}/>
-      </div>
+      <Router>
+        <Navbar title="TextUtils" modeBtnText={modeBtnText} modeDark={modeDark} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <Routes>
+          {/* <div className="container" style={myStyle}   > */}
+            <Route path='/' element={<Textfrom heading="Analyze your text" myStyle={myStyle} modeDark={modeDark} showAlert={showAlert} />} />
+          {/* </div> */}
+          <Route path='/about' element={<About />} />
+        </Routes>
+      </Router>
+
     </>
   );
 }

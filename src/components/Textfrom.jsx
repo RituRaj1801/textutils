@@ -29,7 +29,7 @@ export default function Textfrom(props) {
     }
 
     return (
-        <>
+        <div className="container" style={props.myStyle}   >
             <div className="border border-dark p-3 my-3">
                 <h3>{props.heading}</h3>
                 <div className="mb-3">
@@ -48,7 +48,7 @@ export default function Textfrom(props) {
                     <h3>Preview</h3>
                     <p>{text.trim()}</p>
                 </div>
-            </div> 
-        </>
+            </div>
+        </div>
     )
 }
