@@ -49,11 +49,11 @@ export default function Textfrom(props) {
                 <div className="mb-3">
                     <textarea className={`form-control bg-${props.modeDark ? "light" : "dark"} text-${props.modeDark ? "black" : "light"}`} id="exampleFormControlTextarea1" rows="5" value={text} onChange={onChangeHandler} placeholder='Enetr your text for analyzse' />
                 </div>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1" onClick={toUpperCase}>Convert to UpperCase</button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1" onClick={toLowerCase}>Convert to LowerCase</button>
-                <button disabled={text.length === 0} className="btn btn-primary mx-1" onClick={clear}>Clear</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={toUpperCase}>Convert to UpperCase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={toLowerCase}>Convert to LowerCase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={clear}>Clear</button>
 
-                <button disabled={text.length === 0} className="btn btn-primary mx-1" onClick={hear}><FontAwesomeIcon icon={soundIcon} /></button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={hear}><FontAwesomeIcon icon={soundIcon} /></button>
                 {/* <button className="btn btn-primary mx-1" onClick={props.toggleMode}>{props.modeBtnText}</button> */}
                 <div className="container">
                     <h3>Text Summary</h3>
