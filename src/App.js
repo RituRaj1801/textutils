@@ -33,6 +33,7 @@ function App() {
         type: "dark"
       })
       document.body.style.backgroundColor = 'black'
+      document.body.style.color = 'white'
       setMyStyle({
         color: 'white',
         backgroundColor: 'black'
@@ -45,7 +46,7 @@ function App() {
         type: "light"
       })
       document.body.style.backgroundColor = 'white'
-
+      document.body.style.color = 'black'
       setMyStyle({
         color: 'black',
         backgroundColor: 'white'
@@ -63,13 +64,10 @@ function App() {
         <Navbar title="TextUtils" modeBtnText={modeBtnText} modeDark={modeDark} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
-          {/* <div className="container" style={myStyle}   > */}
-            <Route path='/' element={<Textfrom heading="Analyze your text" myStyle={myStyle} modeDark={modeDark} showAlert={showAlert} />} />
-          {/* </div> */}
+          <Route path='/' element={<Textfrom heading="Analyze your text" myStyle={myStyle} modeDark={modeDark} showAlert={showAlert} />} />
           <Route path='/about' element={<About />} />
         </Routes>
       </Router>
-
     </>
   );
 }
